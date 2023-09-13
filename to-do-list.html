@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .big {
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      #container {
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        height: 730px;
+        margin-top: 0;
+        padding-top: 0;
+      }
+      #section1 {
+        background-color: #f59a6d;
+        margin-left: 0;
+        padding: 20px;
+        color: white;
+      }
+      h1 {
+        padding-left: 27px;
+        font-size: 50px;
+      }
+      #section2 {
+        background-color: #f5f5f5;
+        padding: 20px;
+        height: 520px;
+      }
+      .subsection {
+        background-color: #ec8281;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px;
+      }
+      .add1 {
+        background-color: #ea94ba;
+      }
+      .add2 {
+        background-color: #b586b7;
+      }
+      .add3 {
+        background-color: rgb(148, 102, 173);
+      }
+      label {
+        font-weight: 600;
+      }
+      button {
+        background-color:aliceblue;
+        border: none;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="big">
+        <section id="section1">
+          <h1>To Do List</h1>
+        </section>
+        <section id="section2">
+          <div class="subsection">
+            <label for="coffee">Drink Coffee</label><br>
+            <input type="text" id="coffee" placeholder="Yes/No" />
+            <button onclick="">Perfect!</button>
+            <button onclick="">Delete!</button>
+          </div>
+          <div class="subsection add1">
+            <label for="gym">Gym Today</label><br>
+            <input type="text" id="gym" placeholder="Yes/No" />
+            <button onclick="">Perfect!</button>
+            <button onclick="">Delete!</button>
+          </div>
+          <div class="subsection add2">
+            <label for="study">Hours of Study</label><br>
+            <input type="text" id="study" placeholder="How many hours?" />
+            <button onclick="">Perfect!</button>
+            <button onclick="">Delete!</button>
+          </div>
+          <div class="subsection add3">
+            <label for="pray">Prayer</label><br>
+            <input type="text" id="pray" placeholder="Yes/No" />
+            <button onclick="">Perfect!</button>
+            <button onclick="">Delete!</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="to-do-list.js">
+
+    </script>
+  </body>
+</html>
