@@ -60,7 +60,7 @@
         font-weight: 600;
       }
       button {
-        background-color:aliceblue;
+        background-color: aliceblue;
         border: none;
         border-radius: 10px;
         padding: 5px;
@@ -76,25 +76,25 @@
         </section>
         <section id="section2">
           <div class="subsection">
-            <label for="coffee">Drink Coffee</label><br>
+            <label for="coffee">Drink Coffee</label><br />
             <input type="text" id="coffee" placeholder="Yes/No" />
             <button onclick="">Perfect!</button>
             <button onclick="">Delete!</button>
           </div>
           <div class="subsection add1">
-            <label for="gym">Gym Today</label><br>
+            <label for="gym">Gym Today</label><br />
             <input type="text" id="gym" placeholder="Yes/No" />
             <button onclick="">Perfect!</button>
             <button onclick="">Delete!</button>
           </div>
           <div class="subsection add2">
-            <label for="study">Hours of Study</label><br>
+            <label for="study">Hours of Study</label><br />
             <input type="text" id="study" placeholder="How many hours?" />
             <button onclick="">Perfect!</button>
             <button onclick="">Delete!</button>
           </div>
           <div class="subsection add3">
-            <label for="pray">Prayer</label><br>
+            <label for="pray">Prayer</label><br />
             <input type="text" id="pray" placeholder="Yes/No" />
             <button onclick="">Perfect!</button>
             <button onclick="">Delete!</button>
@@ -102,9 +102,46 @@
         </section>
       </div>
     </div>
+    <div id="saved-contacts"></div>
 
-    <script src="to-do-list.js">
+    <script>
+      const contactForm = document.getElementById("container");
 
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        // ora cominciamo a scrivere la NOSTRA logica :)
+        const coffeeInputField = document.getElementById("coffee");
+        const gymInputField = document.getElementById("gym");
+        const studyInputField = document.getElementById("study");
+        const prayerInputField = document.getElementById("pray");
+
+        const newSection = {
+          coffee: coffeeInputField.value,
+          gym: gymInputField.value,
+          study: studyInputField.value,
+          prayer: prayerInputField.value,
+        };
+
+        console.log("SAVED", newSection);
+
+        const newSectionCard = document.createElement("div");
+        newSectionCard.classList.add("section-card");
+        newSectionCard.innerHTML = `
+    <p>${newSection.coffee}</p>
+    <button onclick="deleteCard(event)">Delete</button>
+    `;
+        const sectionForCards = document.getElementById("saved-contacts");
+        sectionForCards.appendChild(newSectionCard);
+      });
+
+      const deleteCard = function (e) {
+        const clickedButton = e.target;
+        console.log(clickedButton.parentElement);
+        const reallyRemove = confirm("Vuoi davvero eliminare?");
+        if (reallyRemove) {
+          clickedButton.parentElement.remove();
+        }
+      };
     </script>
   </body>
 </html>
